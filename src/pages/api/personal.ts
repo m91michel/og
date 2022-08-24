@@ -1,6 +1,6 @@
 import { withOGImage } from 'next-api-og-image';
 
-import { deploymentURL } from '@/constant/env';
+import { defaultLogo, deploymentURL, fullName, siteName } from '@/constant/env';
 
 enum query {
   'title',
@@ -24,10 +24,10 @@ export default withOGImage<'query', keyof typeof query>({
           <body>
             <div class="container">
               <header>
-                <img src="${deploymentURL}/images/logo.jpg" alt="Favicon" />
+                <img src="${deploymentURL}${defaultLogo}" alt="Favicon" />
                 <div class="right">
                   <h2>${query.type} by</h2>
-                  <p class="gradient">Theodorus Clarence</p>
+                  <p class="gradient">${fullName}</p>
                 </div>
               </header>
               <h1>${query.title}</h1>
@@ -36,7 +36,7 @@ export default withOGImage<'query', keyof typeof query>({
                   ? `<p class="description">${query.description}</p>`
                   : ''
               }
-              <p class="site-name">theodorusclarence.com</p>
+              <p class="site-name">${siteName}</p>
             </div>
           </body>
         </html>

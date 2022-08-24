@@ -3,14 +3,14 @@ import { useRouter } from 'next/router';
 
 import { openGraph } from '@/lib/helper';
 
-import { deploymentURL } from '@/constant/env';
+import { defaultLogo, deploymentURL } from '@/constant/env';
 
 const defaultMeta = {
   title: 'Open Graph Generator',
   siteName: 'Open Graph Generator',
   description: 'Made for personal use by Theodorus Clarence',
   url: deploymentURL,
-  image: `${deploymentURL}/images/logo.jpg`,
+  image: `${deploymentURL}${defaultLogo}`,
   type: 'website',
   robots: 'follow, index',
 };

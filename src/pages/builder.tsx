@@ -8,7 +8,7 @@ import Input from '@/components/forms/Input';
 import SelectInput from '@/components/forms/SelectInput';
 import Seo from '@/components/Seo';
 
-import { deploymentURL } from '@/constant/env';
+import { defaultLogo, deploymentURL } from '@/constant/env';
 import { GeneralQueryEnum } from '@/pages/api/general';
 
 type Query = Record<keyof typeof GeneralQueryEnum | 'ogType', string>;
@@ -72,6 +72,7 @@ export default function BuildPage() {
                       <option value='general'>general</option>
                       <option value='gradient'>gradient</option>
                       <option value='blog'>blog</option>
+                      <option value='personal'>personal</option>
                     </SelectInput>
                     <Input id='siteName' label='siteName' />
                     <Input id='description' label='description' />
@@ -83,7 +84,7 @@ export default function BuildPage() {
                     <Input
                       id='logo'
                       label='Logo Links'
-                      helperText={`default: ${deploymentURL}/images/logo.jpg`}
+                      helperText={`default: ${deploymentURL}${defaultLogo}`}
                     />
                     <Input
                       id='banner'
@@ -119,9 +120,11 @@ export default function BuildPage() {
                       width='1200'
                       height='630'
                     />
-                    <p className='mt-2 text-sm text-gray-600 break-all'>
-                      {link}
-                    </p>
+                    <a href={link} target='_blank' rel='noreferrer'>
+                      <p className='mt-2 text-sm text-gray-600 break-all'>
+                        {link}
+                      </p>
+                    </a>
                   </div>
                 </div>
               </form>

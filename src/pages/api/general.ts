@@ -1,6 +1,6 @@
 import { withOGImage } from 'next-api-og-image';
 
-import { deploymentURL } from '@/constant/env';
+import { defaultLogo, deploymentURL } from '@/constant/env';
 
 export enum GeneralQueryEnum {
   'logo',
@@ -26,7 +26,7 @@ export default withOGImage<'query', keyof typeof GeneralQueryEnum>({
       const query = {
         siteName: siteName ?? 'Site Name',
         description: description ?? 'Description',
-        logo: logo ?? `${deploymentURL}/images/logo.jpg`,
+        logo: logo ?? `${deploymentURL}${defaultLogo}`,
         theme: theme ?? 'dark',
         templateTitle,
         logoWidth: logoWidth ?? '100',

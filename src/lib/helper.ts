@@ -1,4 +1,4 @@
-import { deploymentURL } from '@/constant/env';
+import { defaultLogo, deploymentURL } from '@/constant/env';
 
 export function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ');
@@ -14,7 +14,7 @@ export function openGraph({
   siteName,
   templateTitle,
   description,
-  logo = `${deploymentURL}/images/logo.jpg`,
+  logo = `${deploymentURL}${defaultLogo}`,
 }: OpenGraphType): string {
   const ogLogo = encodeURIComponent(logo);
   const ogSiteName = encodeURIComponent(siteName.trim());

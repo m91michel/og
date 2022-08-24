@@ -1,6 +1,12 @@
 import { withOGImage } from 'next-api-og-image';
 
-import { deploymentURL } from '@/constant/env';
+import {
+  blogLink,
+  defaultLogo,
+  deploymentURL,
+  fullName,
+  twitter,
+} from '@/constant/env';
 
 enum QueryEnum {
   'logo',
@@ -28,7 +34,7 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
       const query = {
         siteName: siteName ?? 'Site Name',
         description: description ?? 'Description',
-        logo: logo ?? `${deploymentURL}/images/logo.jpg`,
+        logo: logo ?? `${deploymentURL}${defaultLogo}`,
         theme: theme ?? 'dark',
         templateTitle,
         logoWidth: logoWidth ?? '100',
@@ -46,7 +52,7 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
               <div class="split">
                 <div class="left">
                   <h3 class="link">
-                    mathias.rocks/blog
+                    ${blogLink}
                   </h3>
                   <h1 class="title">
                     <span class="gradient">
@@ -56,8 +62,8 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
                   <div class="social">
                     <img class="social_img" src="https://www.mathias.rocks/static/d9b7a35e11efc35cb8bcfff6b0dc5967/5376c/profile-pic.webp">
                     <div class="social_info">
-                      <p class="name">Mathias Michel</p>
-                      <p class="twitter">@m91michel</p>
+                      <p class="name">${fullName}</p>
+                      <p class="twitter">${twitter}</p>
                     </div>
                   </div>
                 </div>
