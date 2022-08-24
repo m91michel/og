@@ -54,7 +54,7 @@ export default withOGImage<'query', keyof typeof QueryEnum>({
                     </span>
                   </h1>
                   <div class="social">
-                    <img class="social_img" src="https://res.cloudinary.com/theodorusclarence/image/upload/c_fill,g_auto:face,h_1000,w_1000/v1636335597/theodorusclarence/clarence_gu3cxx.jpg">
+                    <img class="social_img" src="https://www.mathias.rocks/static/d9b7a35e11efc35cb8bcfff6b0dc5967/5376c/profile-pic.webp">
                     <div class="social_info">
                       <p class="name">Mathias Michel</p>
                       <p class="twitter">@m91michel</p>
