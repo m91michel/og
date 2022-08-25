@@ -3,17 +3,17 @@ import { withOGImage } from 'next-api-og-image';
 import { defaultLogo, deploymentURL, fullName, siteName } from '@/constant/env';
 
 enum query {
-  'title',
+  'templateTitle',
   'type',
   'description',
 }
 
 export default withOGImage<'query', keyof typeof query>({
   template: {
-    html: async ({ title, type, description }) => {
+    html: async ({ templateTitle, type, description }) => {
       const query = {
-        title: title ?? 'Title',
-        type: type ?? 'Type',
+        templateTitle: templateTitle ?? 'Title',
+        type: type ?? '',
         description,
       };
       return `
@@ -30,7 +30,7 @@ export default withOGImage<'query', keyof typeof query>({
                   <p class="gradient">${fullName}</p>
                 </div>
               </header>
-              <h1>${query.title}</h1>
+              <h1>${query.templateTitle}</h1>
               ${
                 query.description
                   ? `<p class="description">${query.description}</p>`
